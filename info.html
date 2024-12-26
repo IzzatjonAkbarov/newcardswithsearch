@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header>
+      <nav class="header">
+        <ul>
+          <li class="searchprev">
+            <form id="form" action="">
+              <input id="input" type="text" placeholder="Search" />
+              <button id="button" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <label for="check">
+          <div class="user">
+            <i class="fa-regular fa-user"></i>
+          </div>
+        </label>
+      </nav>
+    </header>
+    <div class="searchlast">
+      <form id="form" action="">
+        <input id="input" type="text" placeholder="Search" />
+        <button id="button" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+    <div class="container">
+      <div class="btns">
+        <button id="all" class="buttonfilter all">All</button>
+
+        <button id="men's clothing" class="buttonfilter men's clothing">
+          Men's clothing</button
+        ><button id="women's clothing" class="buttonfilter women's clothing">
+          Women's clothing</button
+        ><button id="jewelery" class="buttonfilter jewelery">Jewelery</button
+        ><button id="electronics" class="buttonfilter electronics">
+          Electronics
+        </button>
+      </div>
+      <div class="cards"></div>
+    </div>
+    <input type="checkbox" id="check" />
+    <div class="usermenu1">
+      <div class="usermenu">
+        <label class="xbar" for="check"><i class="fa-solid fa-x"></i></label>
+        <p>Name: John</p>
+        <p>Surname: Katheren</p>
+        <p>Email: john@gmail.com</p>
+        <p>password: changeme</p>
+        <p>Phone: +998777777777</p>
+        <p>Address: USA</p>
+        <button class="signout">Sign out</button>
+      </div>
+
+      <button class="signout">Sign out</button>
+    </div>
+    <div class="loading"><div class="loader"></div></div>
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,60 +1,3 @@
-// const p1 = new new Promise((resolve)=>{setTimeout(()=>{res(1),1000})}) => {
-//   if (true) {
-//     res(1);
-//   }
-// });
-// const p1 = Promise.resolve(1);
-// const p2 = Promise.resolve(2);
-// const p3 = Promise.resolve(3);
-// const p4 = Promise.resolve(4);
-// Promise.all([p1, p2, p3, p4]).then((result) => {
-//   console.log(result);
-// });
-// ========================================================
-
-// const p1 = new Promise((resolve, rej) => {
-//   setTimeout(() => {
-//     resolve(1), 1000;
-//   });
-// });
-// const p2 = new Promise((resolve, rej) => {
-//   setTimeout(() => {
-//     resolve(1), 2000;
-//   });
-// });
-// const p3 = new Promise((resolve, rej) => {
-//   setTimeout(() => {
-//     resolve(1), 3000;
-//   });
-// });
-// const p4 = new Promise((resolve, rej) => {
-//   setTimeout(() => {
-//     resolve(1), 4000;
-//   });
-// });
-// Promise.race([p1, p2, p3, p4]).then((result) => {
-//   result;
-// });
-
-//======================================================
-// const p1 = Promise.resolve(3);
-// const p2 = Promise.reject("error");
-// Promise.allSettled([p1, p2]).then((result) => {
-//   console.log(result);
-// });
-//=========================================================
-// const p1 = Promise.reject("fail 1");
-// const p3 = Promise.resolve(" ");
-// const p2 = Promise.reject("Fail2");
-// Promise.any([p1, p2])
-//   .then((res) => {
-//     console.log(res);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
-//============================
 const btns = document.querySelector(".btns");
 const cards = document.querySelector(".cards");
 const btn1 = document.querySelector(".btn1");
@@ -63,13 +6,8 @@ const btn3 = document.querySelector(".btn3");
 let loading = document.querySelector(".loading");
 const btn4 = document.querySelector(".btn4");
 const btn5 = document.querySelector(".btn5");
-// data = localStorage.setItem(JSON.stringify(todo));
-// function loaderfunction(active) {
-//   active ? (loading.style.display = "flex") : (loading.style.display = "none");
-// }
 
 const getDataFuncForFetch = async () => {
-  // loaderfunction(true);
   const request = await fetch("https://fakestoreapi.com/products");
   const response = await request.json();
   return response;
@@ -79,6 +17,7 @@ getDataFuncForFetch().then((data) => {
   searchdata(data);
   category(data);
 });
+
 function category(data) {
   btns.addEventListener("click", (event) => {
     if (event.target.id !== "" && event.target.id !== "all") {
@@ -116,7 +55,6 @@ function getdatauseui(data) {
   function data_i(params) {
     const i = `<i class="fa-solid gold fa-star"></i>`;
     const i2 = `<i class="fa-solid gray fa-star"></i>`;
-    console.log(params);
 
     return i.repeat(params) + i2.repeat(5 - params);
   }
@@ -144,6 +82,18 @@ function getdatauseui(data) {
     cards.append(card);
   });
 }
+
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 const button = document.querySelector("#button");
+const signout = document.querySelector(".signout");
+signout.addEventListener("click", (e) => {
+  localStorage.removeItem("access_token");
+  window.location.href = "./index.html";
+});
+function addsmth() {
+  if (!localStorage.getItem("access_token")) {
+    window.location.href = "./index.html";
+  }
+}
+addsmth();
